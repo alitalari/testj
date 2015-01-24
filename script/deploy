@@ -1,0 +1,9 @@
+#!/bin/sh
+ 
+ssh -i ./lenovo.pom ubuntu@ec2-54-186-85-25.us-west-2.compute.amazonaws.com <<EOF
+  cd ~/testj/testj/
+  git pull
+  npm install --production
+  forever restartall
+  exit
+EOF
